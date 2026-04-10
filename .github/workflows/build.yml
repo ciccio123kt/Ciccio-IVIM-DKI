@@ -41,7 +41,7 @@ jobs:
             main.py
       
       - name: Upload Windows EXE
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Ciccio_IVIM_DKI_v2.0_windows
           path: dist/Ciccio_IVIM_DKI_v2.0_windows.exe
@@ -86,7 +86,7 @@ jobs:
           dmgbuild -s dmg_settings.py "Ciccio IVIM DKI" dist/Ciccio_IVIM_DKI_v2.0.dmg
       
       - name: Upload macOS DMG
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Ciccio_IVIM_DKI_v2.0_macos
           path: dist/Ciccio_IVIM_DKI_v2.0.dmg
@@ -97,7 +97,7 @@ jobs:
     if: success()
     
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
       
       - name: Display structure
         run: find . -type f
